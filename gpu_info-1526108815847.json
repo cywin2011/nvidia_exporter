@@ -84,7 +84,7 @@
               "expr": "nvidia_mem_total_bytes{instance=~'$gpunodes',job=\"pygpu\"}",
               "format": "time_series",
               "intervalFactor": 2,
-              "legendFormat": "{{device_name}}_{{device_index}}",
+              "legendFormat": "total_{{device_name}}_{{device_index}}",
               "refId": "A",
               "step": 2
             },
@@ -93,7 +93,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device_name}}_{{device_index}}",
+              "legendFormat": "free_{{device_name}}_{{device_index}}",
               "refId": "B",
               "step": 2
             },
@@ -102,7 +102,7 @@
               "format": "time_series",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{device_name}}_{{device_index}}",
+              "legendFormat": "used_{{device_name}}_{{device_index}}",
               "refId": "C",
               "step": 2
             }
@@ -484,5 +484,5 @@
   },
   "timezone": "",
   "title": "gpu info",
-  "version": 12
+  "version": 13
 }
