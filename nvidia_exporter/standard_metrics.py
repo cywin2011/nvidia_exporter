@@ -36,6 +36,9 @@ def register_standard_metrics():
         Metric('memory_utilization',
                 'Utilization of the memory',
                 lambda h: nvmlDeviceGetUtilizationRates(h).memory),
+        Metric('Fan_speed', 
+                'The speed of Fan',
+                lambda h: nvmlDeviceGetFanSpeed(h))
     ]
 
     device_count = int(nvmlDeviceGetCount())
