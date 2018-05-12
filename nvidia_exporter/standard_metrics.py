@@ -29,7 +29,13 @@ def register_standard_metrics():
                lambda h: nvmlDeviceGetTemperatureThreshold(h, 1)),
         Metric('process_count',
                'Number of running compute processes',
-               lambda h: len(nvmlDeviceGetComputeRunningProcesses(h)))
+               lambda h: len(nvmlDeviceGetComputeRunningProcesses(h))),
+        Metric('gpu_utilization',
+                'Utilization of the GPU',
+                lambda h: nvmlDeviceGetUtilizationRates(h).gpu),
+        Metric('memory_utilization',
+                'Utilization of the memory',
+                lambda h: nvmlDeviceGetUtilizationRates(h).memory),
     ]
 
     device_count = int(nvmlDeviceGetCount())
